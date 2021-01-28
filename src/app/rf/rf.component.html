@@ -1,0 +1,24 @@
+<div>
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>First Name</label>
+      <input type="text" formControlName="firstName">
+      <small *ngIf="reactiveForm.get('firstName')?.errors?.pattern && reactiveForm.get('firstName')?.touched">Invalid First Name</small>
+      <small *ngIf="reactiveForm.get('firstName')?.errors?.required && reactiveForm.get('firstName')?.touched">Enter the First Name</small>
+    </div>
+    <div>
+      <label>Last Name</label>
+      <input type="text" formControlName="lastName"> {{ reactiveForm.get('lastName')?.value }}
+    </div>
+    <div>
+      <label>Age</label>
+      <input type="text" formControlName="age"> {{ reactiveForm.get('age')?.value }}
+    </div>
+    <div>
+      <label>Gender</label>
+      <input type="text" formControlName="gender"> {{ reactiveForm.get('gender')?.value }}
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+<div>
+  <form #tdForm="ngForm">
+    <div>
+      <label >First Name</label>
+      <input #name="ngModel" name="firstName" type="text" [(ngModel)]="firstName">
+      <small *ngIf="name.dirty">Invalid First Name</small>
+    </div>
+    <div>
+      <label>class</label>
+      <input #cla="ngModel" name="cl" type="number" [(ngModel)]="cl">
+      <small *ngIf="cla.untouched">Invalid Class</small>
+    </div>
+  </form>
+</div>
